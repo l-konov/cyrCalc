@@ -1,4 +1,4 @@
-def args = "20"
+def args = "112"
 def inputValue = args.toInteger()
 if ((inputValue > 9999) || (inputValue < 1)) 
 { 
@@ -32,6 +32,8 @@ switch (charArr.length) {
 }
 
 println "•${processThousands(thousands)}\u0483${processHundreds(hundreds)}${processTens(tens)}${processUnits(units)}•" //\u0483
+// добавить перестановку десяток и единиц для и десятеричного
+
 
 def processThousands(th){
   if (th == null) {return ''}
