@@ -1,4 +1,4 @@
-def args = "112"
+def args = "9898"
 def inputValue = args.toInteger()
 if ((inputValue > 9999) || (inputValue < 1)) 
 { 
@@ -31,8 +31,11 @@ switch (charArr.length) {
     return
 }
 
-println "•${processThousands(thousands)}\u0483${processHundreds(hundreds)}${processTens(tens)}${processUnits(units)}•" //\u0483
-// добавить перестановку десяток и единиц для и десятеричного
+if (tens == '1') {
+  println "•${processThousands(thousands)}\u0483${processHundreds(hundreds)}${processUnits(units)}${processTens(tens)}•"
+} else {
+ println "•${processThousands(thousands)}\u0483${processHundreds(hundreds)}${processTens(tens)}${processUnits(units)}•" //\u0483
+}
 
 
 def processThousands(th){
@@ -41,25 +44,24 @@ def processThousands(th){
 }
 
 def processUnits(u) {
-  int num = u?.toString().toInteger()
-  switch (num) {
-    case 1:
+  switch (u) {
+    case '1':
       return 'а'
-    case 2:
+    case '2':
       return 'в'
-    case 3:
+    case '3':
       return 'г'
-    case 4:
+    case '4':
       return 'д'
-    case 5:
+    case '5':
       return 'е'
-    case 6:
+    case '6':
       return 's'
-    case 7:
+    case '7':
       return 'з'
-    case 8:
+    case '8':
       return 'и'
-    case 9:
+    case '9':
       return 'ѳ' //??
     default:
       return ''
@@ -67,25 +69,24 @@ def processUnits(u) {
 }
 
 def processHundreds(h) {
-  int num = h?.toString().toInteger()
-  switch (num) {
-    case 1:
+  switch (h) {
+    case '1':
       return 'р'
-    case 2:
+    case '2':
       return 'с'
-    case 3:
+    case '3':
       return 'т'
-    case 4:
+    case '4':
       return 'у'
-    case 5:
+    case '5':
       return 'ф'
-    case 6:
+    case '6':
       return 'х'
-    case 7:
+    case '7':
       return 'ѱ'
-    case 8:
+    case '8':
       return 'ѿ'
-    case 9:
+    case '9':
       return 'ц' //??
     default:
       return ''
@@ -93,25 +94,24 @@ def processHundreds(h) {
 }
 
 def processTens(t) {
-  int num = t?.toString().toInteger()
-  switch (num) {
-    case 1:
+  switch (t) {
+    case '1':
       return 'і'
-    case 2:
+    case '2':
       return 'к'
-    case 3:
+    case '3':
       return 'л'
-    case 4:
+    case '4':
       return 'м'
-    case 5:
+    case '5':
       return 'н'
-    case 6:
+    case '6':
       return 'ѯ'
-    case 7:
+    case '7':
       return 'о'
-    case 8:
+    case '8':
       return 'п'
-    case 9:
+    case '9':
       return 'ч' 
     default:
       return ''
